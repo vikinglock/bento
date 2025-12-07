@@ -78,7 +78,7 @@ struct main0_in
     float2 uv [[attribute(2)]];
 };
 
-vertex main0_out main0(main0_in in [[stage_in]], constant Uniforms& _19 [[buffer(3)]])
+vertex main0_out main0(main0_in in [[stage_in]], constant Uniforms& _19 [[buffer(0)]])
 {
     main0_out out = {};
     out.gl_Position = ((_19.projection * _19.view) * _19.model) * float4(in.position, 1.0);

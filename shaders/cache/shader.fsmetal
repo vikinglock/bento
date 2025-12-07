@@ -1,0 +1,32 @@
+#include <metal_stdlib>
+#include <simd/simd.h>
+
+using namespace metal;
+
+struct Uniforms
+{
+    float3 color;
+};
+
+struct main0_out
+{
+    float4 outColor [[color(0)]];
+    float4 twoColor [[color(1)]];
+};
+
+struct main0_in
+{
+    float3 norm [[user(locn1)]];
+    float2 fuv [[user(locn2)]];
+};
+
+fragment main0_out main0(main0_in in [[stage_in]], constant Uniforms& _37 [[buffer(0)]], texture2d<float> tex [[texture(0)]], sampler texSmplr [[sampler(0)]])
+{
+    main0_out out = {};
+    float mult = 0.5 + (0.5 * dot(float3(0.0, 1.0, 0.0), in.norm));
+    float4 scol = tex.sample(texSmplr, in.fuv);
+    out.outColor = float4(_37.color.x * in.fuv.y, _37.color.y * in.fuv.x, _37.color.z * mult, 1.0);
+    out.twoColor = float4(scol.x * in.fuv.y, scol.y * in.fuv.x, scol.z * mult, scol.w);
+    return out;
+}
+

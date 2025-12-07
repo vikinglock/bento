@@ -1,2 +1,11 @@
-bento/shaders/330c
-bento/shaders/bindfix
+.vscode/
+main
+main.exe
+main.d
+main.dYSM/
+main.ilk
+main.pdb
+*.a
+*.lib
+imgui.ini
+bento/cache/

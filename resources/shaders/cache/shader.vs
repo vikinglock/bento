@@ -1,4 +1,7 @@
 #version 330 core
+#ifdef GL_ARB_shading_language_420pack
+#extension GL_ARB_shading_language_420pack : require
+#endif
 uniform mat4 model;
 uniform mat4 view;
 uniform mat4 projection;

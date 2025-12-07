@@ -1,88 +1,115 @@
 # bento
 
-bento (ベント) game engine by me :)
+bento game engine by yours truly :)
+^^^
+ベント 🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯
 
-**currently bento does not in fact have a ui so familiarize yourself with a text editor or run as fast as you can**
+this project uses the MIT license so it's gonna be free; just include that in your project
 
-this project uses the MIT license so it's gonna be free so just include that in your project
-
-though in the bento/lib/ folder there are a bunch of files and libraries that are not in fact mine (these include glfw, khr, dr, bullet physics engine, glad, stb image, glm, hidapi, openal soft, dear imgui (the best), and more)
+though in the bento/lib/ folder there are a bunch of files and libraries that are not in fact mine
+(these include glfw, khr, bullet, glad, stb image, glm, glslang & spirv-cross, and dear imgui)
 
 ## roadmap
 
-compile to apps
+i don't know man
 
-webgl (expect ~~in a month~~ NEVER HAHAHAHAHHAHAHAHA)(i'll do it later with emscripten)
+finish vulkan
 
-vulkan (expect like 4 months or 2 (or 3) years)
+webgl (sooon)
 
-## anything i put here sounds really corporate so here's a moderately sized body of large text
+i plan on adding a bunch of things to this
+i want to keep this free and open source but i am broke
+for now it's gonna stay free also because no one uses it but we'll see
+also i'm probably not gonna work on it for a bit
 
-### easy to use
+### bentoooooooooooooo
+
+#### easy to use
 
 people are lying to you
 
-C++ is easy and on top of that bento abstracts all the convoluted parts of other graphics libraries
+C++ is easy
 
-for example, creating a window is as easy as running
+creating a window is as easy as running
+
+```c++
+Bento* bento;
+int main(){
+    bento = new Bento("TITLE",width,height);
+    while(bento->isRunning()){
+        bento->poll();
+    }
+}
+
+
 ```
-Bento *bento = new Bento();
-bento->init("TITLE",width,height);
-```
 
-### lightweight
+now unfortunately ios doesn't like while loops so if you wanna do ios you have to make `loop()` and `exit()` and call `Bento::startLoop()`
+also ios most likely does not work at the moment *so do not use ios as a target option*
 
-bento is less than 200MB
+#### lightweight
 
-also the example runs at >70 fps only taking 160-180 MB ram on my computer
+in its entirety bento is less than 100MB
 
-### cross-platform
+it's not that much i swear
 
-not gonna lie it's not very cross platform right now
+#### cross-platform
 
-it's a propietary engine so i can do what i want with it
-
-it builds for mac and windows and probably linux too with little hassle but it basically only compiles when using mac
+**linux is untested** but macos and windows work fine i think
 
 ## include
 
-
 all you gotta do is put this in the top of your code
 
-```
-#include "bento/bento.h"
+```cpp
+#include <bento/bento.h>
 ```
 
+double quotes or arrows work fine i think
 
 ## building
-### MACOS
 
-for the top two you can add -convert to convert the shaders
+first you gotta 'install' it with
 
-```
-sh run.sh -metal <output> <input1> <input2> ...
-```
-OR
-```
-sh run.sh -opengl <output> <input1> <input2> ...
-```
-OR
-```
-sh run.sh -windows <output> <input1> <input2> ...
+```sh
+sh bento/install.sh
 ```
 
-warning: these are untested and probably don't work
+or
 
-
-### LINUX
-```
-sh runlinux.sh <output> <input1> <input2> ...
-```
-### WINDOWS
-```
-run.bat <output> <ONLY ONE INPUT>
+```sh
+./bento/install.bat
 ```
 
+(all it does is compile a script that compiles ur code and puts it where it can be run as a command)
 
+then you can run
 
-that's it.
+```sh
+bentoc help
+```
+
+and then something like
+
+```sh
+bentoc -macos -opengl -cached -imgui main main.cpp
+bentoc -macos -metal -timed -convert main main.cpp
+bentoc -windows -opengl -cached -imgui game main.cpp somethingelse.cpp
+bentoc -windows -opengl -cached -convert -imgui main main.cpp
+```
+
+to give a few examples
+**without -convert the shaders will not be converted**
+
+if you don't have glfw installed
+
+```sh
+bentoc cache
+```
+
+might help
+
+alright that aught to be enough
+
+i would add documentation but nobody's gonna use this so i'm not gonna
+like and subscribe and if we get to 5 likes i'll add documentation
