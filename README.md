@@ -1,7 +1,9 @@
 # bento
 
 bento game engine by yours truly :)
+
 ^^^
+
 ベント 🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯
 
 this project uses the MIT license so it's gonna be free; just include that in your project
@@ -21,6 +23,7 @@ i plan on adding a bunch of things to this
 i want to keep this free and open source but i am broke
 for now it's gonna stay free also because no one uses it but we'll see
 also i'm probably not gonna work on it for a bit
+
 
 ### bentoooooooooooooo
 
@@ -45,7 +48,7 @@ int main(){
 ```
 
 now unfortunately ios doesn't like while loops so if you wanna do ios you have to make `loop()` and `exit()` and call `Bento::startLoop()`
-also ios most likely does not work at the moment *so do not use ios as a target option*
+also ios most likely does not work at the moment **so do not use ios as a target option**
 
 #### lightweight
 
@@ -53,7 +56,9 @@ in its entirety bento is less than 100MB
 
 it's not that much i swear
 
-#### cross-platform
+and it runs at less than like 100 mb ram
+
+#### cross-platform kinda sorta
 
 **linux is untested** but macos and windows work fine i think
 
